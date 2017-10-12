@@ -1,0 +1,13 @@
+#配置项目启动信息
+server:
+  port: 8898
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+  #registerWithEureka和fetchRegistry是false说明不要自己向自己注册，默认是可以的
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
